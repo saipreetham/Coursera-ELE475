@@ -45,3 +45,22 @@ Figure C-6:
 ### a)
 
 > Data hazards are caused by data dependences in the code. Whether a dependency causes a hazard depends on the machine implementation (i.e., number of pipeline stages). List all of the data dependences in the code above. Record the register, source instruction, and destination instruction; for example, there is a data dependency for register R1 from the LD to the DADDI.
+
+- The second instruction `DADDI` reads `R1`. Then, it depends on the result of the first instruction `LD`, which writes to `R1`;
+- Third instruction `SD` depends on the previous `DADDI`, since this one writes to `R1` and the later stores this value at the address pointed to by `R2`.  
+- Fifth instruction `DSUB`reads from `R2` and, then, depends on the fourth `DADDI`, which writes to it.
+- Sixth instruction `BNEZ` needs to compare the value of `R4`, which is written in the previous `DSUB`. That is, another dependency.
+- Since it is a loop, `LD` depends on the second `DADDI`, so that `SD`. Both uses values written to `R2`, which happens at the second `DADDI`.
+
+| Register | Source instruction | Consumer instruction |
+| -------- | -------- | -------- |     
+| R1 | LD | DADDI (1) |
+| R1 | DADDI (1) | SD |
+| R2 | DADDI (2) | DSUB |
+| R4 | DSUB | BNEZ |
+| R2 | DADDI (2) | LD |
+| R2 | DADDI (2) | SD |
+
+## b)
+
+> Show the timing of this instruction sequence for the 5-stage RISC pipeline without any forwarding or bypassing hardware but assuming that a register read and a write in the same clock cycle “forwards” through the register file, as shown in Figure C.6. Use a pipeline timing chart like that in Figure C.5. Assume that the branch is handled by flushing the pipeline. If all memory references take 1 cycle, how many cycles does this loop take to execute?
