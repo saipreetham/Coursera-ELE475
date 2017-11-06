@@ -64,3 +64,7 @@ Figure C-6:
 ## b)
 
 > Show the timing of this instruction sequence for the 5-stage RISC pipeline without any forwarding or bypassing hardware but assuming that a register read and a write in the same clock cycle “forwards” through the register file, as shown in Figure C.6. Use a pipeline timing chart like that in Figure C.5. Assume that the branch is handled by flushing the pipeline. If all memory references take 1 cycle, how many cycles does this loop take to execute?
+
+Every decode stage may proceed only when the proper write-back on which it depends has been performed:
+
+![PS1-3B](https://github.com/MarcioJales/Coursera-ELE475/blob/master/ps1-3b.png)
