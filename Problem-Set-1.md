@@ -14,6 +14,8 @@ Then, we have:
 
 ## Problem 2
 
+> You	are	a	processor	designer	and	have	to	make	a	decision	between	building	a	processor	which	executes	at	1GHz	and	has	an	average	CPI	1.2	and	a	processor	which	executes	at	2GHz,	but	has	a	CPI	of	2. Which	is	better	to	build	and	why?
+
 The measure we want is "Time per Instruction". What we have is:
 
 - CPI, measured in "Cycles per Instruction";
