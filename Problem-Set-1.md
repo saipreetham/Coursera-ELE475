@@ -67,4 +67,4 @@ Figure C-6:
 
 Every decode stage may proceed only when the proper write-back on which it depends has been performed:
 
-![PS1-3B](https://github.com/MarcioJales/Coursera-ELE475/blob/master/ps1-3b.png)
+![PS1-3b](https://github.com/MarcioJales/Coursera-ELE475/blob/master/ps1-3b.png)
