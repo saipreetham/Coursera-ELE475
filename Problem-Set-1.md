@@ -10,4 +10,18 @@ Let's list the information:
 
 Then, we have:
 
-![Problem 1 CPI resolution](https://github.com/MarcioJales/Coursera-ELE475/blob/master/Problem-1.png) 
+![Problem 1 CPI resolution](https://github.com/MarcioJales/Coursera-ELE475/blob/master/Problem-1.png)
+
+## Problem 2
+
+The measure we want is "Time per Instruction". What we have is:
+
+- CPI, measured in "Cycles per Instruction";
+- and Clock Rate, measured in "Cycles per Time".
+
+What we need, then, is to divide CPI by the Clock:
+
+1. 1.2 CPI and 1 GHz yields to 1.2 nanoseconds for each instruction.
+2. 2 CPI and 2 GHZ yields to 1.0 nanoseconds for each instruction.
+
+We decide for the second design, assuming the same number of instructions for a program.
