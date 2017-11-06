@@ -36,12 +36,12 @@ We decide for the second design, assuming the same number of instructions for a 
 
 Figure C-5:
 
-![Figure-C-5](https://github.com/MarcioJales/Coursera-ELE475/blob/master/ficgure-c-5.jpg)
+![Figure-C-5](https://github.com/MarcioJales/Coursera-ELE475/blob/master/figure-c-5.jpg)
 
 Figure C-6:
 
-![Figure-C-6](https://github.com/MarcioJales/Coursera-ELE475/blob/master/ficgure-c-6.jpg)
+![Figure-C-6](https://github.com/MarcioJales/Coursera-ELE475/blob/master/figure-c-6.jpg)
 
-### Subproblem "a"
+### a)
 
 > Data hazards are caused by data dependences in the code. Whether a dependency causes a hazard depends on the machine implementation (i.e., number of pipeline stages). List all of the data dependences in the code above. Record the register, source instruction, and destination instruction; for example, there is a data dependency for register R1 from the LD to the DADDI.
