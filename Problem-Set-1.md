@@ -10,7 +10,7 @@ Let's list the information:
 
 Then, we have:
 
-![Problem 1 CPI resolution](https://github.com/MarcioJales/Coursera-ELE475/blob/master/Problem-1.png)
+![Problem-1](https://github.com/MarcioJales/Coursera-ELE475/blob/master/problem-1.png)
 
 ## Problem 2
 
