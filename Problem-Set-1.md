@@ -27,3 +27,21 @@ What we need, then, is to divide CPI by the Clock:
 2. 2 CPI and 2 GHZ yields to 1.0 nanoseconds for each instruction.
 
 We decide for the second design, assuming the same number of instructions for a program.
+
+## Problem 3
+
+> (Page	C-82	in	H&P5,	Problem	C.1	a,b,c,d,e,f,g) Use the following code fragment:
+
+![C-82-P1](https://github.com/MarcioJales/Coursera-ELE475/blob/master/c82-1.jpg)
+
+Figure C-5:
+
+![Figure-C-5](https://github.com/MarcioJales/Coursera-ELE475/blob/master/ficgure-c-5.jpg)
+
+Figure C-6:
+
+![Figure-C-6](https://github.com/MarcioJales/Coursera-ELE475/blob/master/ficgure-c-6.jpg)
+
+### Subproblem "a"
+
+> Data hazards are caused by data dependences in the code. Whether a dependency causes a hazard depends on the machine implementation (i.e., number of pipeline stages). List all of the data dependences in the code above. Record the register, source instruction, and destination instruction; for example, there is a data dependency for register R1 from the LD to the DADDI.
