@@ -97,6 +97,8 @@ Almost the same case as "c", but the "taken" prediction does the `LD` to be the 
 
 ### e)
 
-Unclear to me.
+Unclear to me, but I have something:
+
+![Problem-3e](https://github.com/MarcioJales/Coursera-ELE475/blob/master/problem-3e.png)
 
 ### f)
