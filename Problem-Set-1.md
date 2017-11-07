@@ -89,6 +89,14 @@ The loop takes 11 cycles to execute:
 
 ### d)
 
+> Show the timing of this instruction sequence for the 5-stage RISC pipeline with full forwarding and bypassing hardware. Use a pipeline timing chart like that shown in Figure C.5. Assume that the branch is handled by predicting it as taken. If all memory references take 1 cycle, how many cycles does this loop take to execute?
+
 Almost the same case as "c", but the "taken" prediction does the `LD` to be the next instruction in the pipeline.
 
 ![Problem-3d](https://github.com/MarcioJales/Coursera-ELE475/blob/master/problem-3d.png)
+
+### e)
+
+Unclear to me.
+
+### f)
