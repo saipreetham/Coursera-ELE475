@@ -61,10 +61,18 @@ Figure C-6:
 | R2 | DADDI (2) | LD |
 | R2 | DADDI (2) | SD |
 
-## b)
+### b)
 
 > Show the timing of this instruction sequence for the 5-stage RISC pipeline without any forwarding or bypassing hardware but assuming that a register read and a write in the same clock cycle “forwards” through the register file, as shown in Figure C.6. Use a pipeline timing chart like that in Figure C.5. Assume that the branch is handled by flushing the pipeline. If all memory references take 1 cycle, how many cycles does this loop take to execute?
 
-Every decode stage may proceed only when the proper write-back on which it depends has been performed:
+Every decode stage may proceed only when the proper write-back on which it depends has been performed. It important to notice the structural hazard as well. The loop takes 18 cycles to execute:
 
 ![Problem-3b](https://github.com/MarcioJales/Coursera-ELE475/blob/master/problem-3b.png)
+
+### c)
+
+> Show the timing of this instruction sequence for the 5-stage RISC pipeline with full forwarding and bypassing hardware. Use a pipeline timing chart like that shown in Figure C.5. Assume that the branch is handled by predicting it as not taken. If all memory references take 1 cycle, how many cycles does this loop take to execute?
+
+The loop takes 11 cycles to execute:
+
+![Problem-3c](https://github.com/MarcioJales/Coursera-ELE475/blob/master/problem-3c.png)
