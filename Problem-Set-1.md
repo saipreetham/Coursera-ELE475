@@ -32,6 +32,8 @@ We decide for the second design, assuming the same number of instructions for a 
 
 > (Page	C-82	in	H&P5,	Problem	C.1	a,b,c,d,e,f,g) Use the following code fragment:
 
+There is a error on the "store" instruction. Instead of `SD R1,0,(R2)`, it is `SD R1,0(R2)`, since we deal with a I-type instruction.
+
 ![C-82-P1](https://github.com/MarcioJales/Coursera-ELE475/blob/master/c82-1.jpg)
 
 Figure C-5:
@@ -65,7 +67,11 @@ Figure C-6:
 
 > Show the timing of this instruction sequence for the 5-stage RISC pipeline without any forwarding or bypassing hardware but assuming that a register read and a write in the same clock cycle “forwards” through the register file, as shown in Figure C.6. Use a pipeline timing chart like that in Figure C.5. Assume that the branch is handled by flushing the pipeline. If all memory references take 1 cycle, how many cycles does this loop take to execute?
 
-Every decode stage may proceed only when the proper write-back on which it depends has been performed. It important to notice the structural hazard as well. The loop takes 18 cycles to execute:
+We assume that the loop will continue when reach the end for this case and letters "c" and "d".
+
+Every decode stage may proceed only when the proper write-back on which it depends has been performed. It important to notice the structural hazard as well. Since we simply flush the pipeline to solve the branch, The `LD` for the next iteration will stall until the `ID` stage of `BNEZ`, where finally the processor finds out where to go (considering the MIPS microarchitecture).
+
+The loop takes 18 cycles to execute:
 
 ![Problem-3b](https://github.com/MarcioJales/Coursera-ELE475/blob/master/problem-3b.png)
 
@@ -73,6 +79,16 @@ Every decode stage may proceed only when the proper write-back on which it depen
 
 > Show the timing of this instruction sequence for the 5-stage RISC pipeline with full forwarding and bypassing hardware. Use a pipeline timing chart like that shown in Figure C.5. Assume that the branch is handled by predicting it as not taken. If all memory references take 1 cycle, how many cycles does this loop take to execute?
 
+For this case, we also have some structural hazards. Now, dependencies on I-type mat proceed after its `MEM` stage. For instance, the second `DADDI` executes only when `LD` reads the memory to set `R1`. Also, dependencies on R-type instructions may proceed after its `EX` stage.
+
+We predict that branch is not taken. The next fetched instruction (omitted from the chart) will be flushed and the `LD` will be placed after we decode the `BNEZ` command.
+
 The loop takes 11 cycles to execute:
 
 ![Problem-3c](https://github.com/MarcioJales/Coursera-ELE475/blob/master/problem-3c.png)
+
+### d)
+
+Almost the same case as "c", but the "taken" prediction does the `LD` to be the next instruction in the pipeline.
+
+![Problem-3d](https://github.com/MarcioJales/Coursera-ELE475/blob/master/problem-3d.png)
