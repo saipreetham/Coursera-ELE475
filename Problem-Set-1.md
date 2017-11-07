@@ -97,6 +97,8 @@ Almost the same case as "c", but the "taken" prediction does the `LD` to be the 
 
 ### e)
 
+> High-performance processors have very deep pipelines—more than 15 stages. Imagine that you have a 10-stage pipeline in which every stage of the 5-stage pipeline has been split in two. The only catch is that, for data forwarding, data are forwarded from the end of a pair of stages to the beginning of the two stages where they are needed. For example, data are forwarded from the output of the second execute stage to the input of the first execute stage, still causing a 1-cycle delay. Show the timing of this instruction sequence for the 10-stage RISC pipeline with full forwarding and bypassing hardware. Use a pipeline timing chart like that shown in Figure C.5. Assume that the branch is handled by predicting it as taken. If all memory references take 1 cycle, how many cycles does this loop take to execute?
+
 Unclear to me, but I have something:
 
 ![Problem-3e](https://github.com/MarcioJales/Coursera-ELE475/blob/master/problem-3e.png)
